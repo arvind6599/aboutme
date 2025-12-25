@@ -1,5 +1,5 @@
 baseURL: "https://arvind6599.github.io/aboutme/"
-relativeURLs: true
+canonifyURLs: true
 languageCode: en-us
 title: Arvind Menon
 theme: PaperMod
