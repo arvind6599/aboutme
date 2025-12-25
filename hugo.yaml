@@ -1,7 +1,12 @@
 baseURL: ""
+relativeURLs: true
 languageCode: en-us
 title: Arvind Menon
 theme: PaperMod
+
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
 
 enableRobotsTXT: true
 buildDrafts: false
