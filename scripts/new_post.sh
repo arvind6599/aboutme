@@ -52,14 +52,12 @@ fi
 # slugify title → filename
 slugify() {
   local s="$1"
-  # lowercase
-  s="${s,,}"
-  # replace non-alnum with hyphens
-  s="$(echo "$s" | sed 's/[^a-z0-9]+/-/g; s/[^a-z0-9]/-/g')"
-  # collapse multiple hyphens
-  s="$(echo "$s" | sed 's/-\{2,\}/-/g')"
+  # lowercase (portable for macOS bash 3.2)
+  s="$(printf '%s' "$s" | tr '[:upper:]' '[:lower:]')"
+  # replace any sequence of non-alnum with a single hyphen
+  s="$(printf '%s' "$s" | sed -E 's/[^a-z0-9]+/-/g')"
   # trim leading/trailing hyphens
-  s="$(echo "$s" | sed 's/^-\+//; s/-\+$//')"
+  s="$(printf '%s' "$s" | sed -E 's/^-+//; s/-+$//')"
   echo "$s"
 }
 
