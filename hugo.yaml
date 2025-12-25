@@ -1,0 +1,73 @@
+baseURL: ""
+languageCode: en-us
+title: Arvind Menon
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  defaultTheme: dark
+  disableThemeToggle: false
+  description: "ExampleSite description"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: Me
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+
+  homeInfoParams:
+    Title: Hey there, I'm Arvind 
+    Content: |-
+
+      🚀 I love solving math puzzles, building with AI and participating in hackathons → [Portfolio](https://devpost.com/arvind-menon/)  
+
+      ⚡ Currently building AI workflows for law firms at [DeepJudge](https://www.deepjudge.ai/)
+
+      📚 I am trying to get better at Essay writing and making Youtube videos 
+
+      🔎 Search though my posts here [Search](/search/)
+
+
+  socialIcons: # optional
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/arvmenon/"
+    - name: "GitHub"
+      url: "https://github.com/arvind6599"
+
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Posts"
+      url: "/posts/"
+      weight: 2
+    - name: "Search"
+      url: "/search/"
+      weight: 3
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
